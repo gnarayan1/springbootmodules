@@ -1,5 +1,6 @@
-package com.geeth.modules.module1;
+package com.geeth.modules.module2;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,8 +10,11 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
-@ComponentScan(basePackages = { "com.geeth.modules.module1" })
-public class AppConfig {
+@ComponentScan(basePackages = { "com.geeth.modules.module2, com.geeth.modules.module1" })
+public class Moldel2Config {
+	
+	@Autowired
+    JpaVendorAdapter jpaVendorAdapter;
 
     /**
      * Primary because if we have activated embedded databases, we do not want

@@ -1,10 +1,18 @@
-package com.geeth.models.commonmodels;
+package com.geeth.modules.module2;
 
-public class Model1 {
+public class Model2 {
 	
 	int id;
 	String someVal;
 	String someVal2;
+	
+	public Model2(int id, String someVal, String someVal2) {
+		this.id = id;
+		this.someVal = someVal;
+		this.someVal2 = someVal2;
+	}
+	
+	
 	/**
 	 * @return the id
 	 */
