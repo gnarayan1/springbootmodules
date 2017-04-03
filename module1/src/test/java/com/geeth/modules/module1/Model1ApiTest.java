@@ -29,7 +29,7 @@ public class Model1ApiTest extends TestCase {
 	public void testAddModel1() {
 		String val1 = "val1";
 		String val2 = "val2";
-		Model1 model1 = model1Api.addModel1(1, val1, val2);
+		Model1 model1 = model1Api.addModel1(val1, val2);
 		assertEquals(model1.getSomeVal(), val1);
 		assertEquals(model1.getSomeVal2(), val2);
 	}

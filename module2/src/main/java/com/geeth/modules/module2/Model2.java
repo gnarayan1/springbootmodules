@@ -1,13 +1,23 @@
 package com.geeth.modules.module2;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Model2 {
 	
-	int id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
+	private Long id;
 	String someVal;
 	String someVal2;
 	
-	public Model2(int id, String someVal, String someVal2) {
-		this.id = id;
+	public Model2(String someVal, String someVal2) {
 		this.someVal = someVal;
 		this.someVal2 = someVal2;
 	}
@@ -16,13 +26,13 @@ public class Model2 {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	/**

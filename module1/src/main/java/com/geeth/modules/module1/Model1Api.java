@@ -23,7 +23,7 @@ public class Model1Api
 	}
 	 
 	 
-    public Model1 addModel1(int id, String val1, String val2) {
+    public Model1 addModel1(String val1, String val2) {
         try {
         	Model1 model1 = new Model1(val1, val2);
         	return model1Repo.saveAndFlush(model1);
@@ -34,7 +34,7 @@ public class Model1Api
     }
     
     
-    public void getModel1ById(int id) {
+    public void getModel1ById(Long id) {
         try {
         	model1Repo.findById(id);
         } catch (Exception e) {

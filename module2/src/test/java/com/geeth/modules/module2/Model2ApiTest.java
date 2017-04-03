@@ -1,38 +1,33 @@
 package com.geeth.modules.module2;
 
-import junit.framework.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.AnnotationConfigContextLoader;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
 /**
  * Unit test for simple Model2Api.
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = Model2Config.class, loader = AnnotationConfigContextLoader.class)
 public class Model2ApiTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public Model2ApiTest( String testName )
-    {
-        super( testName );
-    }
+	@Autowired
+	Model2Api model2Api;
+	
+  
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( Model2ApiTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+    @Test
+	public void testAddModel2() {
+		String val1 = "val1";
+		String val2 = "val2";
+		Model2 model2 = model2Api.addModel2(val1, val2);
+		assertEquals(model2.getSomeVal(), val1);
+		assertEquals(model2.getSomeVal2(), val2);
+	}
 }
